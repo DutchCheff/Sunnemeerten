@@ -254,8 +254,10 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | **Zodat ik...**              | op de informatie kan handelen|
 | **Prioriteit**               | Hoog                         |
 | **Acceptatiecriteria**       |
-| - Je kan een blog pagina zi  |
+|De gebruiker kan een blog bekijken |
 | **Scenario**                 |
+| 1. de gebruiker komt op de blog pagina |
+| 2. de gebruiker heeft ogen en kan dus de blog pagina lezen |
 
 ---
 

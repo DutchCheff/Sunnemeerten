@@ -153,3 +153,73 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | **Wil ik...**   | Eenvoudig een donatie kunnen doen           |
 | **Zodat ik...** | Financieel kan bijdragen aan het initiatief |
 | **Prioriteit**  | Hoog                                        |
+
+---
+
+## Foto's upload pagina
+
+| Titel                                       | Foto's upload                                     |
+| ------------------------------------------- | ------------------------------------------------- |
+| **Als een...**                              | Gebruiker                                         |
+| **Wil ik...**                               | Foto's kunnen uploaden                            |
+| **Zodat ik...**                             | Andere mensen kan laten zien wat er gemaakt wordt |
+| **Prioriteit**                              | Hoog                                              |
+| **Acceptatiecriteria**                      |
+| - Je kan foto's uploaden                    |
+| **Scenario**                                |
+| 1. Gebruiker opent de foto upload pagina    |
+| 2. Gebruiker kiest een foto om te uploaden  |
+| 3. Gebruiker typt beschrijving voor de foto |
+| 4. Gebruiker klikt op upload                |
+
+---
+
+## Foto Feed pagina
+
+| Titel                                                | Foto Feed                  |
+| ---------------------------------------------------- | -------------------------- |
+| **Als een...**                                       | Gebruiker                  |
+| **Wil ik...**                                        | Foto's kunnen vergroten    |
+| **Zodat ik...**                                      | De foto beter kan bekijken |
+| **Prioriteit**                                       | Laag                       |
+| **Acceptatiecriteria**                               |
+| - Je kan foto's vergroten                            |
+| **Scenario**                                         |
+| 1. Je komt op de foto pagina                         |
+| 2. Je ziet niet goed wat er op de foto staat         |
+| 3. Je veegt met twee vingers om de foto te vergroten |
+
+---
+
+## Foto Feed pagina
+
+| Titel                                               | Foto Feed                         |
+| --------------------------------------------------- | --------------------------------- |
+| **Als een...**                                      | Gebruiker                         |
+| **Wil ik...**                                       | Foto's kunnen liken               |
+| **Zodat ik...**                                     | Aan kan geven dat de foto leuk is |
+| **Prioriteit**                                      | Hoog                              |
+| **Acceptatiecriteria**                              |
+| - Je kan een foto liken                             |
+| **Scenario**                                        |
+| 1. Je komt op de foto pagina                        |
+| 2. Je klikt klikt op het hartje om de foto te liken |
+
+---
+
+## Foto Feed pagina
+
+| Titel                        | Foto Feed                    |
+| ---------------------------- | ---------------------------- |
+| **Als een...**               | Gebruiker                    |
+| **Wil ik...**                | op foto's kunnen reageren    |
+| **Zodat ik...**              | iets kan zeggen over de foto |
+| **Prioriteit**               | Hoog                         |
+| **Acceptatiecriteria**       |
+| - Je kan op foto's reageren  |
+| **Scenario**                 |
+| 1. Je komt op de foto pagina |
+| 2. Je kan reacties lezen     |
+| 3. Je kan reacties plaatsen  |
+
+---

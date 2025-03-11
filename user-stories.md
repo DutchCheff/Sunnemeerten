@@ -245,3 +245,16 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | 3. Je kan reacties plaatsen  |
 
 ---
+## Blog  pagina
+
+| Titel                        | Blog                         |
+| ---------------------------- | ---------------------------- |
+| **Als een...**               | Gebruiker                    |
+| **Wil ik...**                | informatie vergaren          |
+| **Zodat ik...**              | op de informatie kan handelen|
+| **Prioriteit**               | Hoog                         |
+| **Acceptatiecriteria**       |
+| - Je kan een blog pagina zi  |
+| **Scenario**                 |
+
+---

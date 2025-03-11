@@ -145,6 +145,28 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 
 ---
 
+
+## Vrijwilliger aanmeldpagina
+
+| Titel                                            | Vrijwilliger aanmeldpagina                   |
+| ------------------------------------------------ | -------------------------------------------- |
+| **Als een...**                                   | Geïnteresseerde vrijwilliger                 |
+| **Wil ik...**                                    | Mij kunnen aanmelden via een formulier       |
+| **Zodat ik...**                                  | Kan helpen bij activiteiten                  |
+| **Prioriteit**                                   | Medium                                       |
+| **Acceptatiecriteria**                           |
+| - Aanmeldformulier met naam, e-mail en motivatie |
+| - Bevestigingsmail na aanmelding                 |
+| - Opslag van aanmeldingen in database            |
+| **Scenario**                                     |
+| 1. Bezoeker opent de aanmeldpagina               |
+| 2. Bezoeker vult naam, e-mail en motivatie in    |
+| 3. Bezoeker klikt op ‘Aanmelden’                 |
+| 4. Bevestigingsmail wordt verstuurd              |
+| 5. Gegevens worden opgeslagen in database        |
+| **Bijzonderheden**                               | GDPR-conform verwerking van persoonsgegevens |
+
+
 ## Donatie pagina
 
 | Titel           | Donatie pagina                              |
@@ -223,3 +245,19 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | 3. Je kan reacties plaatsen  |
 
 ---
+## Blog  pagina
+
+| Titel                        | Blog                         |
+| ---------------------------- | ---------------------------- |
+| **Als een...**               | Gebruiker                    |
+| **Wil ik...**                | informatie vergaren          |
+| **Zodat ik...**              | op de informatie kan handelen|
+| **Prioriteit**               | Hoog                         |
+| **Acceptatiecriteria**       |
+|De gebruiker kan een blog bekijken |
+| **Scenario**                 |
+| 1. de gebruiker komt op de blog pagina |
+| 2. de gebruiker heeft ogen en kan dus de blog pagina lezen |
+
+---
+

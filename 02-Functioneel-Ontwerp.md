@@ -1,10 +1,10 @@
 # Functioneel Ontwerp
 
-Versienummer :
-Auteur :
-Studentnummer :
-Klas :
-Datum :
+Versienummer : 1.0
+Auteur : Laurens Kuipers 
+Studentnummer : 0266526
+Klas : 24SDB
+Datum : 11-3-2025
 
 <div style="page-break-after: always;"></div>
 
@@ -12,7 +12,7 @@ Datum :
 
 | Datum      | Versie | Wie | Wijzigingen |
 | ---------- | ------ | --- | ----------- |
-| yyyy-mm-dd | x.x    |     |             |
+| 11-3-2025  | 1.0    | Laurens| Alles             |
 |            |        |     |             |
 |            |        |     |             |
 
@@ -51,37 +51,93 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 
 > Hier vermeld je alle functionaliteiten die de applicatie gaat bieden, zoals is beschreven (en geprioriteerd) in het programma van eisen. De beschrijvingen dienen ook duidelijk te zijn voor niet vakgenoten. Maak de benodigde **user stories**.
 
-| Titel              | <Naam/Titel van de functionaliteit> |
-| ------------------ | ----------------------------------- |
-| Als een...         | ==Type gebruiker==                  |
-| Wil ik...          | ==Doelstelling/Actie==              |
-| Zodat ik...        | ==Reden==                           |
-| Prioriteit         | ==Hoog/Medium/Laag==                |
-| Acceptatiecriteria | ==Voorwaarde(n)==                   |
-| Scenario           | ==Stap 1, Stap 2, ...==             |
-| Bijzonderheden     | ==Extra informatie==                |
+# Login pagina  
+| Titel              | Login pagina                              |
+| ------------------ | ---------------------------------------- |
+| **Als een...**     | Gebruiker                                |
+| **Wil ik...**      | Inloggen met mijn e-mailadres en wachtwoord |
+| **Zodat ik...**    | Toegang krijg tot mijn persoonlijke account |
+| **Prioriteit**     | Hoog                                     |
+| **Acceptatiecriteria** |  
+| - Inlogformulier met e-mail en wachtwoord  |  
+| - Foutmelding bij ongeldige inloggegevens  |  
+| - Wachtwoord vergeten optie  |  
+| - Mogelijkheid om ingelogd te blijven  |  
+| **Scenario**        |  
+| 1. Gebruiker opent de loginpagina  |  
+| 2. Gebruiker vult e-mail en wachtwoord in  |  
+| 3. Gebruiker klikt op 'Inloggen'  |  
+| 4. Bij correcte gegevens wordt de gebruiker ingelogd  |  
+| 5. Bij incorrecte gegevens verschijnt een foutmelding  |  
+| **Bijzonderheden**  | Gebruik van versleutelde wachtwoorden voor beveiliging |
 
-Voorbeeld user story:
+---
 
-| Titel              | Inloggen |
-| ------------------ | -------- |
-| Als een...         | Gebruiker |
-| Wil ik...          | Inloggen |
-| Zodat ik...        | Toegang krijg tot mijn account |
-| Prioriteit         | Hoog     |
-| Acceptatiecriteria | Gebruikersnaam en wachtwoord zijn correct |
-| Scenario           | 1. Gebruiker vult gebruikersnaam en wachtwoord in en klikt op de knop "Inloggen" |
-| Bijzonderheden     | nvt |
+## Landing page  
+| Titel              | Landing page                              |
+| ------------------ | ---------------------------------------- |
+| **Als een...**     | Bezoeker                                 |
+| **Wil ik...**      | Een overzichtelijke en aantrekkelijke landingspagina zien |
+| **Zodat ik...**    | Snel begrijp waar de website over gaat  |
+| **Prioriteit**     | Hoog                                     |
+| **Acceptatiecriteria** |  
+| - Afteltijd zichtbaar op de voorpagina  |  
+| - Route/Blogpost weergegeven op de voorpagina  |  
+| - Overzicht van de belangrijkste zaken  |  
+| **Scenario**        |  
+| 1. Bezoeker opent de website  |  
+| 2. De landingspagina toont direct de belangrijkste informatie  |  
+| 3. Bezoeker kan doorklikken naar verdere details  |  
+| **Bijzonderheden**  | Responsief design voor verschillende schermformaten |
 
-| Titel              | Registreren voor exclusieve content |
-| ------------------ | ----------------------------------- |
-| Als een...         | Website bezoeker |
-| Wil ik ...         | registreren met mijn e-mailadres |
-| Zodat ik ...       | toegang krijg tot exclusieve content |
-| Prioriteit         | Hoog |
-| Acceptatiecriteria | 1. Het registratieformulier moet e-mailvalidatie bevatten. <br/> 2. Na registratie moet er een bevestigingsmail worden verstuurd. <br/> 3. ... |
-| Scenario           | 1. Open de registratiepagina. <br/> 2. Vul het formulier in met geldige gegevens. <br/> 3. Ontvang en bevestig de registratie-e-mail. <br/> 4. ... <br/> 5. ... |
-| Bijzonderheden     | nvt |
+---
+
+## GPS Tracker  
+| Titel              | GPS Tracker                              |
+| ------------------ | ---------------------------------------- |
+| **Als een...**     | Gebruiker                                |
+| **Wil ik...**      | Routes kunnen bekijken en de locatie kunnen volgen |
+| **Zodat ik...**    | Ten alle tijden kan zien waar de parade zich bevindt |
+| **Prioriteit**     | Hoog                                     |
+| **Acceptatiecriteria** |  
+| - Kaartweergave met routes  |  
+| - Live GPS-tracking  |  
+| **Scenario**        |  
+| 1. Gebruiker opent de GPS-trackerpagina  |  
+| 2. Kaart met huidige routes wordt weergegeven  |  
+| 3. Live locatie van de parade wordt getoond  |  
+| **Bijzonderheden**  | Gebruik van een betrouwbare kaartenprovider zoals Google Maps of OpenStreetMap |
+
+---
+
+## Vrijwilliger aanmeldpagina  
+| Titel              | Vrijwilliger aanmeldpagina              |
+| ------------------ | ---------------------------------------- |
+| **Als een...**     | Geïnteresseerde vrijwilliger            |
+| **Wil ik...**      | Mij kunnen aanmelden via een formulier  |
+| **Zodat ik...**    | Kan helpen bij activiteiten            |
+| **Prioriteit**     | Medium                                  |
+| **Acceptatiecriteria** |  
+| - Aanmeldformulier met naam, e-mail en motivatie  |  
+| - Bevestigingsmail na aanmelding  |  
+| - Opslag van aanmeldingen in database  |  
+| **Scenario**        |  
+| 1. Bezoeker opent de aanmeldpagina  |  
+| 2. Bezoeker vult naam, e-mail en motivatie in  |  
+| 3. Bezoeker klikt op ‘Aanmelden’  |  
+| 4. Bevestigingsmail wordt verstuurd  |  
+| 5. Gegevens worden opgeslagen in database  |  
+| **Bijzonderheden**  | GDPR-conform verwerking van persoonsgegevens |
+
+---
+
+## Donatie pagina  
+| Titel              | Donatie pagina                           |
+| ------------------ | ---------------------------------------- |
+| **Als een...**     | Bezoeker                                 |
+| **Wil ik...**      | Eenvoudig een donatie kunnen doen       |
+| **Zodat ik...**    | Financieel kan bijdragen aan het initiatief |
+| **Prioriteit**     | Hoog                                     |
 
 ## Definition of Done
 

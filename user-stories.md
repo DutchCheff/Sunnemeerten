@@ -12,8 +12,8 @@ Datum :
 
 | Datum      | Versie | Wie   | Wijzigingen |
 | ---------- | ------ | ----- | ----------- |
-| 2025-03-11 | 1.0    | Wiebe |             |
-|            |        |       |             |
+| 2025-03-11 | 1.0    | Wiebe     |         
+| 2025-03-13 | 1.0.1  | Wiebe & Laurens     | Admin pagina beschreven|             |
 |            |        |       |             |
 
 <div style="page-break-after: always;"></div>
@@ -29,6 +29,7 @@ Datum :
   - [Actoren](#actoren)
     - [Functionele eisen en omschrijving](#functionele-eisen-en-omschrijving)
   - [Definition of Done](#definition-of-done)
+  - [Userstories](#user-stories)
 
 <div style="page-break-after: always;"></div>
 
@@ -61,6 +62,7 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | Scenario           | ==Stap 1, Stap 2, ...==             |
 | Bijzonderheden     | ==Extra informatie==                |
 
+## user stories
 # Login pagina
 
 | Titel                                                 | Login pagina                                           |
@@ -261,3 +263,18 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 
 ---
 
+
+## admin  pagina
+
+| Titel                        | Admin pagina                          |
+| ---------------------------- | ---------------------------- |
+| **Als een...**               | admin                        |
+| **Wil ik...**                | De admin pagina knunen bezoeken          |
+| **Zodat ik...**              | Andere funcites in het admin panel kan gebruiken|
+| **Prioriteit**               | Hoog                         |
+| **Acceptatiecriteria**       |
+|De admin kan lp de admin pagina komen |
+| **Scenario**                 |
+| 1. de admin komt op de blog pagina |
+
+---

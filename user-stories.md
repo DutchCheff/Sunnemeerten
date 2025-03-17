@@ -10,11 +10,11 @@ Datum :
 
 ## Versiebeheer
 
-| Datum      | Versie | Wie   | Wijzigingen |
-| ---------- | ------ | ----- | ----------- |
-| 2025-03-11 | 1.0    | Wiebe     |         
-| 2025-03-13 | 1.0.1  | Wiebe & Laurens     | Admin pagina beschreven|             |
-|            |        |       |             |
+| Datum      | Versie | Wie             | Wijzigingen             |
+| ---------- | ------ | --------------- | ----------------------- | --- |
+| 2025-03-11 | 1.0    | Wiebe           |
+| 2025-03-13 | 1.0.1  | Wiebe & Laurens | Admin pagina beschreven |     |
+|            |        |                 |                         |
 
 <div style="page-break-after: always;"></div>
 
@@ -63,6 +63,7 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | Bijzonderheden     | ==Extra informatie==                |
 
 ## user stories
+
 # Login pagina
 
 | Titel                                                 | Login pagina                                           |
@@ -147,7 +148,6 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 
 ---
 
-
 ## Vrijwilliger aanmeldpagina
 
 | Titel                                            | Vrijwilliger aanmeldpagina                   |
@@ -167,7 +167,6 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | 4. Bevestigingsmail wordt verstuurd              |
 | 5. Gegevens worden opgeslagen in database        |
 | **Bijzonderheden**                               | GDPR-conform verwerking van persoonsgegevens |
-
 
 ## Donatie pagina
 
@@ -247,83 +246,117 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | 3. Je kan reacties plaatsen  |
 
 ---
-## Blog  pagina
 
-| Titel                        | Blog                         |
-| ---------------------------- | ---------------------------- |
-| **Als een...**               | Gebruiker                    |
-| **Wil ik...**                | informatie vergaren          |
-| **Zodat ik...**              | op de informatie kan handelen|
-| **Prioriteit**               | Hoog                         |
-| **Acceptatiecriteria**       |
-|De gebruiker kan een blog bekijken |
-| **Scenario**                 |
-| 1. de gebruiker komt op de blog pagina |
+## Blog pagina
+
+| Titel                                                      | Blog                          |
+| ---------------------------------------------------------- | ----------------------------- |
+| **Als een...**                                             | Gebruiker                     |
+| **Wil ik...**                                              | informatie vergaren           |
+| **Zodat ik...**                                            | op de informatie kan handelen |
+| **Prioriteit**                                             | Hoog                          |
+| **Acceptatiecriteria**                                     |
+| De gebruiker kan een blog bekijken                         |
+| **Scenario**                                               |
+| 1. de gebruiker komt op de blog pagina                     |
 | 2. de gebruiker heeft ogen en kan dus de blog pagina lezen |
 
 ---
 
+## admin pagina
 
-## admin  pagina
+| Titel                                 | Admin pagina                                     |
+| ------------------------------------- | ------------------------------------------------ |
+| **Als een...**                        | admin                                            |
+| **Wil ik...**                         | De admin pagina knunen bezoeken                  |
+| **Zodat ik...**                       | Andere funcites in het admin panel kan gebruiken |
+| **Prioriteit**                        | Hoog                                             |
+| **Acceptatiecriteria**                |
+| De admin kan lp de admin pagina komen |
+| **Scenario**                          |
+| 1. de admin komt op de blog pagina    |
 
-| Titel                        | Admin pagina                          |
-| ---------------------------- | ---------------------------- |
-| **Als een...**               | admin                        |
-| **Wil ik...**                | De admin pagina knunen bezoeken          |
-| **Zodat ik...**              | Andere funcites in het admin panel kan gebruiken|
-| **Prioriteit**               | Hoog                         |
-| **Acceptatiecriteria**       |
-|De admin kan lp de admin pagina komen |
-| **Scenario**                 |
-| 1. de admin komt op de blog pagina |
+### Inloggen op admin pagina
 
-### Inloggen op admin pagina  
-
-| Titel                        | Inloggen op admin pagina              |
-| ---------------------------- | ------------------------------------ |
-| **Als een...**               | admin                                |
-| **Wil ik...**                | kunnen inloggen op de adminpagina   |
-| **Zodat ik...**              | toegang heb tot de beheerfuncties   |
-| **Prioriteit**               | Hoog                                 |
-| **Acceptatiecriteria**       |
-| De admin kan succesvol inloggen op de adminpagina |
-| **Scenario**                 |
-| 1. De admin navigeert naar de inlogpagina |
-| 2. De admin vult de juiste inloggegevens in |
+| Titel                                              | Inloggen op admin pagina          |
+| -------------------------------------------------- | --------------------------------- |
+| **Als een...**                                     | admin                             |
+| **Wil ik...**                                      | kunnen inloggen op de adminpagina |
+| **Zodat ik...**                                    | toegang heb tot de beheerfuncties |
+| **Prioriteit**                                     | Hoog                              |
+| **Acceptatiecriteria**                             |
+| De admin kan succesvol inloggen op de adminpagina  |
+| **Scenario**                                       |
+| 1. De admin navigeert naar de inlogpagina          |
+| 2. De admin vult de juiste inloggegevens in        |
 | 3. De admin wordt doorgestuurd naar de adminpagina |
 
 ---
 
-### Foto's goed- of afkeuren  
+### Foto's goed- of afkeuren
 
-| Titel                        | Foto's goed- of afkeuren             |
-| ---------------------------- | ------------------------------------ |
-| **Als een...**               | admin                                |
-| **Wil ik...**                | foto's kunnen goed- of afkeuren      |
-| **Zodat ik...**              | enkel goedgekeurde foto's worden weergegeven |
-| **Prioriteit**               | Hoog                                 |
-| **Acceptatiecriteria**       |
-| De admin kan foto's markeren als goedgekeurd of afgekeurd |
-| **Scenario**                 |
+| Titel                                                      | Foto's goed- of afkeuren                     |
+| ---------------------------------------------------------- | -------------------------------------------- |
+| **Als een...**                                             | admin                                        |
+| **Wil ik...**                                              | foto's kunnen goed- of afkeuren              |
+| **Zodat ik...**                                            | enkel goedgekeurde foto's worden weergegeven |
+| **Prioriteit**                                             | Hoog                                         |
+| **Acceptatiecriteria**                                     |
+| De admin kan foto's markeren als goedgekeurd of afgekeurd  |
+| **Scenario**                                               |
 | 1. De admin navigeert naar de pagina met ingezonden foto's |
-| 2. De admin selecteert een foto |
-| 3. De admin kiest voor goedkeuren of afkeuren |
-| 4. De status van de foto wordt aangepast |
+| 2. De admin selecteert een foto                            |
+| 3. De admin kiest voor goedkeuren of afkeuren              |
+| 4. De status van de foto wordt aangepast                   |
 
 ---
 
-### Foto's op de frontpage wijzigen  
+### Foto's op de frontpage wijzigen
 
-| Titel                        | Foto's op de frontpage wijzigen      |
-| ---------------------------- | ------------------------------------ |
-| **Als een...**               | admin                                |
-| **Wil ik...**                | foto's op de frontpage kunnen aanpassen |
-| **Zodat ik...**              | de juiste content wordt getoond op de frontpage |
-| **Prioriteit**               | Hoog                                 |
-| **Acceptatiecriteria**       |
+| Titel                                                                    | Foto's op de frontpage wijzigen                 |
+| ------------------------------------------------------------------------ | ----------------------------------------------- |
+| **Als een...**                                                           | admin                                           |
+| **Wil ik...**                                                            | foto's op de frontpage kunnen aanpassen         |
+| **Zodat ik...**                                                          | de juiste content wordt getoond op de frontpage |
+| **Prioriteit**                                                           | Hoog                                            |
+| **Acceptatiecriteria**                                                   |
 | De admin kan foto's toevoegen, vervangen of verwijderen van de frontpage |
-| **Scenario**                 |
-| 1. De admin navigeert naar de instellingen van de frontpage |
-| 2. De admin selecteert een foto om te wijzigen |
-| 3. De admin uploadt een nieuwe foto of verwijdert een bestaande |
-| 4. De wijzigingen worden opgeslagen en zichtbaar op de frontpage |
+| **Scenario**                                                             |
+| 1. De admin navigeert naar de instellingen van de frontpage              |
+| 2. De admin selecteert een foto om te wijzigen                           |
+| 3. De admin uploadt een nieuwe foto of verwijdert een bestaande          |
+| 4. De wijzigingen worden opgeslagen en zichtbaar op de frontpage         |
+
+## Registreer pagina
+
+| Titel                                                                    | Register                                                                        |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| **Als een...**                                                           | Gebruiker                                                                       |
+| **Wil ik...**                                                            | een account aan kunnen maken                                                    |
+| **Zodat ik...**                                                          | foto's kan uploaden en mij kan aanmelden bij een werkplaats of als vrijwilliger |
+| **Prioriteit**                                                           | Hoog                                                                            |
+| **Acceptatiecriteria**                                                   |
+| De gebruiker kan een account aanmaken                                    |
+| **Scenario**                                                             |
+| 1. de gebruiker komt op de registreer pagina                             |
+| 2. de gebruiker registreerd zijn of haar account met geldig email adres  |
+| 3. De gebruiker krijgt een verificatie email om het account te activeren |
+
+---
+
+## Werkplaats aanmeldpagina
+
+| Titel                                                       | Werplaats                                                                  |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Als een...**                                              | Gebruiker                                                                  |
+| **Wil ik...**                                               | Mij aan kunnen melden voor een werkplaats                                  |
+| **Zodat ik...**                                             | Bij een werkplaats kan gaan helpen bouwen van de sculpturen voor de parade |
+| **Prioriteit**                                              | medium                                                                     |
+| **Acceptatiecriteria**                                      |
+| De gebruiker kan zich aanmelden bij een werkplaats          |
+| **Scenario**                                                |
+| 1. de gebruiker komt op de werkplaats aanmeldpagina         |
+| 2. de gebruiker ziet welke werkplaatsen er beschikbaar zijn |
+| 3. De gebruiker kan zich inschrijven op een werkplaats      |
+
+---

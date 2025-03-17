@@ -277,4 +277,53 @@ In dit document worden de verschillende actoren, de user stories en de definitio
 | **Scenario**                 |
 | 1. de admin komt op de blog pagina |
 
+### Inloggen op admin pagina  
+
+| Titel                        | Inloggen op admin pagina              |
+| ---------------------------- | ------------------------------------ |
+| **Als een...**               | admin                                |
+| **Wil ik...**                | kunnen inloggen op de adminpagina   |
+| **Zodat ik...**              | toegang heb tot de beheerfuncties   |
+| **Prioriteit**               | Hoog                                 |
+| **Acceptatiecriteria**       |
+| De admin kan succesvol inloggen op de adminpagina |
+| **Scenario**                 |
+| 1. De admin navigeert naar de inlogpagina |
+| 2. De admin vult de juiste inloggegevens in |
+| 3. De admin wordt doorgestuurd naar de adminpagina |
+
 ---
+
+### Foto's goed- of afkeuren  
+
+| Titel                        | Foto's goed- of afkeuren             |
+| ---------------------------- | ------------------------------------ |
+| **Als een...**               | admin                                |
+| **Wil ik...**                | foto's kunnen goed- of afkeuren      |
+| **Zodat ik...**              | enkel goedgekeurde foto's worden weergegeven |
+| **Prioriteit**               | Hoog                                 |
+| **Acceptatiecriteria**       |
+| De admin kan foto's markeren als goedgekeurd of afgekeurd |
+| **Scenario**                 |
+| 1. De admin navigeert naar de pagina met ingezonden foto's |
+| 2. De admin selecteert een foto |
+| 3. De admin kiest voor goedkeuren of afkeuren |
+| 4. De status van de foto wordt aangepast |
+
+---
+
+### Foto's op de frontpage wijzigen  
+
+| Titel                        | Foto's op de frontpage wijzigen      |
+| ---------------------------- | ------------------------------------ |
+| **Als een...**               | admin                                |
+| **Wil ik...**                | foto's op de frontpage kunnen aanpassen |
+| **Zodat ik...**              | de juiste content wordt getoond op de frontpage |
+| **Prioriteit**               | Hoog                                 |
+| **Acceptatiecriteria**       |
+| De admin kan foto's toevoegen, vervangen of verwijderen van de frontpage |
+| **Scenario**                 |
+| 1. De admin navigeert naar de instellingen van de frontpage |
+| 2. De admin selecteert een foto om te wijzigen |
+| 3. De admin uploadt een nieuwe foto of verwijdert een bestaande |
+| 4. De wijzigingen worden opgeslagen en zichtbaar op de frontpage |

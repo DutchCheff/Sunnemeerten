@@ -1,24 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.querySelector(".mobile-menu-button");
-    const menu = document.querySelector(".mobile-menu");
+const burger = document.getElementById('burger');
+const closeMenu = document.getElementById('close-menu');
+const menu = document.getElementById('menu');
 
-    menuButton.addEventListener("click", () => {
-        event.stopPropagation();
-        menu.classList.toggle("hidden");
-        if (menuButton.classList.contains("fa-bars")) {
-            menuButton.classList.remove("fa-bars");
-            menuButton.classList.add("fa-x");
-        } else {
-            menuButton.classList.remove("fa-x");
-            menuButton.classList.add("fa-bars");
-        }
-    });
+burger.addEventListener('click', () => {
+    menu.classList.toggle('translate-x-full');
+});
 
-    document.addEventListener("click", (event) => {
-        if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
-            menu.classList.add("hidden");
-            menuButton.classList.remove("fa-x");
-            menuButton.classList.add("fa-bars");
-        }
-    });
+closeMenu.addEventListener('click', () => {
+    menu.classList.add('translate-x-full');
 });

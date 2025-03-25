@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "watch": "npx tailwindcss -i ./resources/css/style.css -o ./public/css/style.css --watch",
+    "build": "npx tailwindcss -i ./resources/css/style.css -o ./public/css/style.css --minify"
+  },
+  "dependencies": {
+    "-": "^0.0.1"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
   }

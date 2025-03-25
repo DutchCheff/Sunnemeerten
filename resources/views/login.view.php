@@ -12,9 +12,9 @@
             </button>
         </div>
     </nav>
-    <!-- transform translate-x-full transition-transform duration-300 ease-in-out z-50 -->
     <!-- slide out modal -->
-    <div class="fixed top-0 right-0 h-full w-1/2 bg-card text-accent-light z-50" id="menu">
+    <div class="fixed top-0 right-0 h-full w-1/2 bg-card text-accent-light transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+        id="menu">
         <!-- closing button -->
         <div class="w-full flex justify-end">
             <button id="close-menu" class="">

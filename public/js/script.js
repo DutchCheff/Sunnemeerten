@@ -3,9 +3,9 @@ const closeMenu = document.getElementById('close-menu');
 const menu = document.getElementById('menu');
 
 burger.addEventListener('click', () => {
-    menu.classList.toggle('translate-x-full');
+    menu.classList.toggle('translate-y-full');
 });
 
 closeMenu.addEventListener('click', () => {
-    menu.classList.add('translate-x-full');
+    menu.classList.add('translate-y-full');
 });

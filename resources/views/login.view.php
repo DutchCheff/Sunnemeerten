@@ -1,27 +1,13 @@
 <?php require_once '../resources/views/header.view.php'; ?>
-<div class="w-full h-screen bg-background absolute">
+<div class="w-full h-full bg-inherit bg-fixed relative">
+
     <!-- Logo -->
-    <div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
-        <div class="text-center pb-5">
-            <h1 class="text-4xl">De parade begint over</h1>
-        </div>
-        <div class="flex gap-3 justify-between">
-            <div class="flex flex-col gap-2 justify-center items-center">
-                <h1 class="text-3xl">221</h1>
-                <p>Dagen</p>
-            </div>
-            <div class="flex flex-col gap-2 justify-center items-center">
-                <h1 class="text-3xl">18</h1>
-                <p>Uur</p>
-            </div>
-            <div class="flex flex-col gap-2 justify-center items-center">
-                <h1 class="text-3xl">48</h1>
-                <p>Minuten</p>
-            </div>
-            <div class="flex flex-col gap-2 justify-center items-center">
-                <h1 class="text-3xl">35</h1>
-                <p>Seconden</p>
-            </div>
+    <div class="mt-14">
+        <img src="/images/logo1.png" alt="" class="scale-90">
+    </div>
+    <div class="bg-card mx-7 h-[40rem] rounded-2xl text-text px-3 py-4">
+        <div>
+            <h1 class="text-4xl text-center">Login</h1>
         </div>
     </div>
 </div>

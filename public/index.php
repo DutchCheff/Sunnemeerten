@@ -24,7 +24,15 @@ include_once "../libs/core.php";
     <title>Sunnemeerten</title>
 </head>
 
-<body class="josefin-sans-bold">
+<body class="josefin-sans-bold bg-<?php
+            if (isset($_GET['page'])) {
+                if ($_GET['page'] == "test1") {
+                    echo 'accent2';
+                } else {
+                    echo 'background';
+                }
+            }
+            ?>">
     <?php include_once getPage() ?>
 </body>
 

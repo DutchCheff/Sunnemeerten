@@ -1,6 +1,9 @@
 <?php require_once '../resources/views/header.view.php'; ?>
 <div class="w-full h-screen bg-background absolute">
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     <!-- Logo -->
     <div class="mt-14">
         <img src="/images/logo1.png" alt="" class="scale-90">

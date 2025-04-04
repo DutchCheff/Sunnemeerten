@@ -12,7 +12,8 @@ module.exports = {
         'accent1': '#C2A831',
         'accent2': '#C5260C',
         'accent-light': '#FFE399',
-        'text': '#f8fafc'
+        'text': '#f8fafc',
+        'input': '#1F2937'
       },
     },
   },

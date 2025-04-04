@@ -24,7 +24,7 @@
             </div>
 
             <div class="flex justify-between">
-                <button type="button" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400">voorwarden</button>
+                <button type="button" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400">voorwaarden</button>
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Sign Up</button>
             </div>
         </form>

@@ -21,7 +21,7 @@
 
 <body class="josefin-sans-bold bg-<?php
             if (isset($_GET['page'])) {
-                if ($_GET['page'] == " test1") { echo 'accent2' ; } else { echo 'background' ; } } ?>">
+                if ($_GET['page'] == "test") { echo 'accent2' ; } else { echo 'background' ; } } ?>">
 </body>
 <nav class="fixed top-0 left-0 w-full flex justify-between items-center px-4 py-3 z-40 bg-inherit text-accent-light">
     <!-- naam -->

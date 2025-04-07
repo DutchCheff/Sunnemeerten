@@ -60,7 +60,7 @@
         <a href="" class="text-3xl">
             <p class="text-shadow">Route</p>
         </a>
-        <a href="" class="text-3xl">
+        <a href="?page=account" class="text-3xl">
             <p class="text-shadow">Account</p>
         </a>
         <a href="" class="text-3xl">

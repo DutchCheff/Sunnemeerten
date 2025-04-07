@@ -1,5 +1,5 @@
 <?php require_once '../resources/views/header.view.php'; ?>
-<div class="w-full h-screen bg-background absolute">
+
 <div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
         <h2 class="text-2xl font-semibold text-center mb-4">Account Wijzigen</h2>
         <form>
@@ -29,4 +29,3 @@
             </div>
         </form>
     </div>
-</div>

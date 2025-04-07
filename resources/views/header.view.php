@@ -60,13 +60,13 @@
         <a href="" class="text-3xl">
             <p class="text-shadow">Route</p>
         </a>
-        <a href="" class="text-3xl">
+        <a href="?page=account" class="text-3xl">
             <p class="text-shadow">Account</p>
         </a>
-        <a href="" class="text-3xl">
+        <a href="?page=donation" class="text-3xl">
             <p class="text-shadow">Doneren</p>
         </a>
-        <a href="" class="text-3xl">
+        <a href="?page=volunteer" class="text-3xl">
             <p class="text-shadow">Vrijwilligers
             </p>
         </a>

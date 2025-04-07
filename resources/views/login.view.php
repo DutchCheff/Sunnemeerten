@@ -1,6 +1,6 @@
 <?php require_once '../resources/views/header.view.php'; ?>
 
-<div class="w-full h-full bg-inherit bg-fixed relative">
+
 
     <!-- Logo -->
     <div class="mt-14">
@@ -9,6 +9,7 @@
     <div class="bg-card mx-7 rounded-2xl text-text px-3 py-4">
         <div>
             <h1 class="text-4xl text-center">Login</h1>
+            <a href="?page=register">Registreren</a>
         </div>
         <form action="sign-in">
             <div class="mb-4">
@@ -36,5 +37,5 @@
             </div>
         </form>
     </div>
-</div>
+
 <?php require_once '../resources/views/footer.view.php'; ?>

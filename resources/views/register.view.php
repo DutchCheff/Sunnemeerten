@@ -1,7 +1,7 @@
 <?php require_once '../resources/views/header.view.php'; ?>
 
     <div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
-        <h2 class="text-2xl font-semibold text-center mb-4">Registreren</h2>
+        <h2 class="text-4xl font-semibold text-center mb-4">Registreren</h2>
         <form>
             <div class="mb-4">
                 <label class="block">Naam</label>
@@ -29,3 +29,6 @@
             </div>
         </form>
     </div>
+</div>
+<?php require_once '../resources/views/footer.view.php'; ?>
+

@@ -7,3 +7,4 @@
             </div>
         
     </div>
+    <?php require_once '../resources/views/footer.view.php'; ?>

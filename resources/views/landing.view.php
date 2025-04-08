@@ -21,29 +21,29 @@
         </button>
     </div>
     <div class="bg-card shadow-md rounded-lg flex flex-col gap-2 items-center w-full mx-7">
-        <div class="px-3 pt-4">
+        <div class="px-4 pt-4">
             <img src="/images/11.jpg" alt="foto" class="rounded-lg">
         </div>
-        <div class="px-3">
+        <div class="px-4">
             <img src="/images/12.jpg" alt="" class="rounded-lg">
         </div>
-        <div class="px-3">
+        <div class="px-4">
             <img src="/images/13.jpg" alt="" class="rounded-lg">
         </div>
-        <div class="px-3 pb-4">
+        <div class="px-4 pb-4">
             <img src="/images/14.jpg" alt="" class="rounded-lg">
         </div>
     </div>
 </div>
-<div>
-    <button>
-        <a href="?page=news"></a>
+<div class="flex flex-col gap-3 items-center mt-16 mx-7 mb-16">
+    <button class="bg-accent1 w-full  text-text text-4xl rounded-lg py-1 leading-[1.3]">
+        <a href="?page=news">Nieuws</a>
     </button>
-    <button>
-        <a href="?page=volunteer"></a>
+    <button class="bg-accent2 w-full text-text text-4xl rounded-lg py-1 leading-[1.3]">
+        <a href="?page=volunteer">Vrijwilliger</a>
     </button>
-    <button>
-        <a href="?page=donation"></a>
+    <button class="bg-card w-full text-text text-4xl rounded-lg py-1 leading-[1.3]">
+        <a href="?page=donation">Doneer</a>
     </button>
 </div>
 </div>

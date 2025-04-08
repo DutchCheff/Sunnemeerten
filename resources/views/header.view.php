@@ -23,6 +23,12 @@
             if (isset($_GET['page'])) {
                 if ($_GET['page'] == "test") { echo 'accent2' ; } else { echo 'background' ; } } ?>">
 </body>
+
+<?php
+    // Exclude navbar for specific pages
+    $excludedPages = ['login', 'register', 'landing_ua'];
+    if (!isset($_GET['page']) || !in_array($_GET['page'], $excludedPages)) :
+?>
 <nav class="fixed top-0 left-0 w-full flex justify-between items-center px-4 py-3 z-40 bg-inherit text-accent-light">
     <!-- naam -->
     <div class="w-32">
@@ -33,7 +39,6 @@
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
             </path>
-
         </svg>
     </button>
 </nav>
@@ -71,7 +76,7 @@
             </p>
         </a>
     </div>
-
 </div>
+<?php endif; ?>
 
 </html>

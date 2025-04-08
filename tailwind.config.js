@@ -17,5 +17,14 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    'bg-background',
+    'bg-card',
+    'bg-accent1',
+    'bg-accent2',
+    'bg-accent-light',
+    'text-text',
+    'text-input',
+  ],
   plugins: [],
 }

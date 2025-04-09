@@ -21,7 +21,7 @@
 
 <body class="josefin-sans-bold bg-<?php
             if (isset($_GET['page'])) {
-                if ($_GET['page'] == "test") { echo 'accent2' ; } else { echo 'background' ; } } ?>">
+                if ($_GET['page'] == "donation") { echo 'card' ; } else { echo 'background' ; } } ?>">
 </body>
 
 <?php

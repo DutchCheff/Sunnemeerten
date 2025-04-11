@@ -1,6 +1,6 @@
 <?php require_once '../resources/views/header.view.php'; ?>
 
-<div class="bg-card shadow-md mx-7 mt-28 rounded-2xl text-text px-3 py-4">
+<div class="bg-card shadow-md mx-7 mt-28 rounded-2xl text-text px-6 py-4">
     <h2 class="text-4xl font-semibold text-center my-4">Account Wijzigen</h2>
     <form>
         <div class="mb-4">

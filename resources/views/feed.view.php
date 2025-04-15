@@ -27,8 +27,13 @@ $result = $conn->query("SELECT title, content, is_allowed, created_at, images FR
             } ?>
             <div class="post">
 
+                <div class="flex justify-between">
                 <h2><?php echo htmlspecialchars($row['title']); ?></h2>
-
+                <div class="text-[12px] text-gray-200">
+                    <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?>
+                </div>
+                
+                </div>
                 <!-- Display images -->
                 <?php if (!empty($row['images'])): ?>
                     <div class="post-images">
@@ -52,9 +57,7 @@ $result = $conn->query("SELECT title, content, is_allowed, created_at, images FR
                     <button>
                         <img class="h-10 w-10 me-3" src="icon/heart-icon.svg" alt="">
                     </button>
-                    <div class="date">
-                        <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -80,7 +83,7 @@ $result = $conn->query("SELECT title, content, is_allowed, created_at, images FR
         </button>
     </div>
 </div>
-<a href="?page=usersend" class="fixed bottom-2 right-4 bg-accent1 rounded-xl h-15 w-15 m-2">
-    <img class="h-10 w-10 m-1" src="icon/plus-round-icon.svg" alt="">
+<a href="?page=usersend" class="fixed bottom-5 right-5 h-10 w-10">
+    <img class="h-10 w-10 rounded-full bg-white border-white border-1" src="icon/plus-round-icon.svg" alt="">
 </a>
 <?php require_once '../resources/views/footer.view.php'; ?>

@@ -1,3 +1,4 @@
+<?php require_once '../public/database/auth.php'; ?>
 <?php require_once '../resources/views/header.view.php'; ?>
 
 <div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
@@ -25,7 +26,7 @@
 
         <div class="flex justify-between">
             <button type="button" class="bg-accent2 text-text px-4 py-2 rounded-lg hover:bg-gray-400">Verwijderen</button>
-            <a class="bg-accent1 text-text px-4 py-2 rounded-lg hover:bg-blue-600" href="?page=login">Afmelden</a>
+            <a class="bg-accent1 text-text px-4 py-2 rounded-lg hover:bg-blue-600" href="?page=logout">Afmelden</a>
         </div>
     </form>
 </div>

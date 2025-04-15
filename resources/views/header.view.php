@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+< lang="nl">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 <body class="josefin-sans-bold bg-<?php
             if (isset($_GET['page'])) {
                 if ($_GET['page'] == "donation") { echo 'card' ; } else { echo 'background' ; } } ?>">
-</body>
+
 
 <?php
     // Exclude navbar for specific pages
@@ -78,5 +78,3 @@
     </div>
 </div>
 <?php endif; ?>
-
-</html>

@@ -1,3 +1,10 @@
+
+<?php require_once '../public/database/auth.php'; ?>
+<?php if ($_SESSION['user_id'] === 1) {
+    header('Location: ?page=login');
+    exit;
+}
+?>
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -45,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $title, $content, $imageUrlsString);
 
     if ($stmt->execute()) {
-        echo "<p style='color: green;'>Post uploaded successfully!</p>";
+        header('Location: ?page=feed'); // Adjust path to your route/view
+        exit;
     } else {
         echo "<p style='color: red;'>Error uploading post: " . $stmt->error . "</p>";
     }

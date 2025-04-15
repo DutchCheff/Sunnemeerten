@@ -56,7 +56,7 @@
         <img src="/images/logo.png" alt="" class="mt-10">
     </div>
     <div class="flex flex-col gap-3 mt-3 px-2">
-        <a href="" aria-current="page" class="text-3xl text-accent2">
+        <a href="?page=landing" aria-current="page" class="text-3xl text-accent2">
             <p class="text-shadow">Home</p>
         </a>
         <a href="?page=feed" class="text-3xl">

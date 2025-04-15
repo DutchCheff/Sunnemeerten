@@ -1,3 +1,9 @@
+<?php require_once '../public/database/auth.php'; ?>
+<?php if ($_SESSION['user_id'] === 1) {
+    header('Location: ?page=login');
+    exit;
+}
+?>
 <?php require_once '../public/database/db.php'; ?>
 <?php
 $thebg = 0;

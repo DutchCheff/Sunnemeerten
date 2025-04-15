@@ -1,3 +1,4 @@
+<?php require_once '../public/database/auth.php'; ?>
 <?php require_once '../resources/views/header.view.php'; ?>
 <div class="mt-16">
     <img src="/images/logo1.png" alt="logo">

@@ -1,4 +1,5 @@
 <?php require_once '../public/database/db.php'; ?>
+<?php require_once '../public/database/auth.php'; ?>
 <?php
 $thebg = 0;
 $bg = 'card';

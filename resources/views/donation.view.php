@@ -1,3 +1,4 @@
+<?php require_once '../public/database/auth.php'; ?>
 <?php require_once '../resources/views/header.view.php'; ?>
 <div class="h-screen flex items-center outl">
     <div class="bg-background shadow-md mx-7 mt-28 rounded-2xl text-text px-3 py-16 flex flex-col">

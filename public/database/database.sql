@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS posts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create the user table
+-- Create the userposts table
 CREATE TABLE IF NOT EXISTS userPosts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -19,4 +19,12 @@ CREATE TABLE IF NOT EXISTS userPosts (
     content TEXT,
     is_allowed BOOLEAN,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- Create the user table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    isadmin BOOLEAN DEFAULT FALSE
 );

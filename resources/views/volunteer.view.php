@@ -1,3 +1,4 @@
+<?php require_once '../public/database/auth.php'; ?>
 <?php require_once '../resources/views/header.view.php'; ?>
 
 <div class="bg-card shadow-md mx-7 mt-28 rounded-2xl text-text flex flex-col items-center px-6 py-4">

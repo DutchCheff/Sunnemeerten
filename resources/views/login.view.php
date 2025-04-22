@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="mt-16 mb-10">
         <img src="/images/logo1.png" alt="Logo" class="scale-90">
     </div>
-    <div class="bg-card shadow-md mx-7 mb-4 rounded-2xl text-text px-3 py-4">
+    <div class="bg-card shadow-md mx-7 mb-4 rounded-2xl text-text px-6 py-4">
         <div>
-            <h1 class="text-4xl text-center">Login</h1>
+            <h1 class="text-4xl text-center my-4">Login</h1>
         </div>
 
         <?php if (!empty($errors)): ?>
@@ -62,30 +62,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="mb-4 mt-3">
                 <label>Email</label>
                 <input type="email" name="email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
-                       class="w-full mt-1 p-2 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-input">
+                       class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-input">
+
             </div>
 
             <div class="mb-4">
                 <label class="block">Wachtwoord</label>
                 <input type="password" name="password" required
-                       class="w-full mt-1 p-2 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-input">
+                       class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-input">
             </div>
 
             <div>
                 <button type="submit"
-                        class="bg-accent1 text-text px-4 py-2 rounded-lg w-full mb-4 mt-4 text-base">
+                        class="bg-accent1 text-text px-4 py-1 rounded-lg w-full mb-4 mt-4 text-base">
                     Inloggen
                 </button>
             </div>
 
             <div class="flex gap-2 w-full">
                 <div class="w-1/2">
-                <a href="?page=Guest" class="bg-accent2 text-text px-4 py-2 rounded-lg w-full mb-4 mt-4 text-base text-center block">
+                <a href="?page=Guest" class="bg-accent2 text-text px-4 py-1 rounded-lg w-full mb-4 mt-2 text-base text-center block">
                         Gast
                     </a>
                 </div>
                 <div class="w-1/2">
-                    <a href="?page=register" class="bg-background text-text px-4 py-2 rounded-lg w-full mb-4 mt-4 text-base text-center block">
+                    <a href="?page=register" class="bg-background text-text px-4 py-1 rounded-lg w-full mb-4 mt-2 text-base text-center block">
                         Registreren
                     </a>
                 </div>

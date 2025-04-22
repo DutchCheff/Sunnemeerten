@@ -1,7 +1,5 @@
 <?php require_once '../public/database/db.php'; ?>
 <?php require_once '../resources/views/header.view.php'; ?>
-
-
 <?php
 $errors = [];
 $success = '';
@@ -41,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
+<div class="bg-card mx-7 mt-28 rounded-2xl text-text px-6 py-4">
     <h2 class="text-4xl font-semibold text-center mb-4">Registreren</h2>
 
     <?php if (!empty($errors)): ?>
@@ -62,25 +60,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="mb-4">
             <label class="block">Naam</label>
             <input type="text" name="username" value="<?= htmlspecialchars($_POST['username'] ?? '') ?>" required
-                   class="w-full mt-1 p-2 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
+                   class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div class="mb-4">
             <label class="block">Email</label>
             <input type="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required
-                   class="w-full mt-1 p-2 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
+                   class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div class="mb-4">
             <label class="block">Wachtwoord</label>
             <input type="password" name="password" required
-                   class="w-full mt-1 p-2 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
+                   class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div class="mb-6">
             <label class="block">Herhaal wachtwoord</label>
             <input type="password" name="confirm_password" required
-                   class="w-full mt-1 p-2 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
+                   class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div class="flex justify-between">
@@ -91,3 +89,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 <?php require_once '../resources/views/footer.view.php'; ?>
+

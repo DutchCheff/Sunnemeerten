@@ -1,8 +1,14 @@
 <?php
 
 // Connect to the database
-$conn = new mysqli("localhost", "root", "", "my_content_db");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+try {
+   $conn = new mysqli("localhost", "root", "", "my_content_db");
+   $hasfaild = false;
+} catch (\Throwable $th) {
+    //throw $th;
+    echo "<p> Database connection failed </p>";
+    $hasfaild = true;
+    $_SESSION['user_id'] = "failed";
 }
+
 ?>

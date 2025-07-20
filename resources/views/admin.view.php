@@ -10,8 +10,9 @@ $thebg = 0;
 $bg = 'card';
 
 // Fetch all posts
+if (!$hasfaild) {
 $result = $conn->query("SELECT id, title, content, is_allowed, created_at, images FROM userposts ORDER BY created_at DESC");
-
+}
 ?>
 
 <?php require_once '../resources/views/header.view.php'; ?>
@@ -21,8 +22,9 @@ $result = $conn->query("SELECT id, title, content, is_allowed, created_at, image
 <div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
     <a href="?page=feed" class="bg-accent2">feed</a>
 </div>
-<?php if ($result->num_rows > 0): ?>
-    <?php while ($row = $result->fetch_assoc()): ?>
+<?php if (!$hasfaild): ?>
+    <?php if ($result->num_rows > 0): ?>
+        <?php while ($row = $result->fetch_assoc()): ?>
         <div class="bg-<?php echo $bg; ?> mx-7 mt-10 rounded-2xl text-text px-3 py-4">
             <?php if ($thebg == 0) {
                 $thebg = 1;
@@ -71,6 +73,11 @@ $result = $conn->query("SELECT id, title, content, is_allowed, created_at, image
         <p>No posts found.</p>
     </div>
 
+<?php endif; ?>
+<?php else: ?>
+    <div class="bg-card mx-7 mt-10 rounded-2xl text-text px-3 py-4">
+        <p>Database connection failed. No posts available.</p>
+    </div>
 <?php endif; ?>
 
 <?php require_once '../resources/views/footer.view.php'; ?>

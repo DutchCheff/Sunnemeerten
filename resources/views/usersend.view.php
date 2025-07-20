@@ -1,5 +1,6 @@
 
 <?php require_once '../public/database/auth.php'; ?>
+<?php require_once '../public/database/db.php'; ?>
 <?php if ($_SESSION['user_id'] === 1) {
     header('Location: ?page=login');
     exit;
@@ -9,13 +10,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$conn = new mysqli("localhost", "root", "", "my_content_db");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // Handle form submit
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !$hasfaild) {
     $title = $conn->real_escape_string($_POST["title"]);
     $content = $conn->real_escape_string($_POST["content"]);
 
@@ -57,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "<p style='color: red;'>Error uploading post: " . $stmt->error . "</p>";
     }
+} else if ($hasfaild && $_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<p style='color: red;'>Database connection failed no data submitted.</p>";
 }
 ?>
 

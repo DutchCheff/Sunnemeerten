@@ -4,7 +4,9 @@
 $thebg = 0;
 $bg = 'card';
 // Fetch all posts
+if (!$hasfaild) {
 $result = $conn->query("SELECT title, content, is_allowed, created_at, images FROM userposts WHERE is_allowed = 1 ORDER BY created_at DESC");
+}
 ?>
 
 <?php require_once '../resources/views/header.view.php'; ?>
@@ -13,7 +15,7 @@ $result = $conn->query("SELECT title, content, is_allowed, created_at, images FR
     <a href="?page=admin" class="bg-accent1">admin</a>
 </div>
 
-<?php if ($result->num_rows > 0): ?>
+<?php if (!$hasfaild && $result->num_rows > 0): ?>
     <?php while ($row = $result->fetch_assoc()): ?>
         <div class="bg-<?php echo $bg; ?> mx-7 mt-10 rounded-2xl text-text px-3 py-4">
             <?php if ($thebg == 0) {

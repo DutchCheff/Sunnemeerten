@@ -4,10 +4,12 @@ require_once '../public/database/db.php';
 
 $email = 'Guest'; // Or however you identify your guest
 
+if ($hasfaild = false) {
 $stmt = $conn->prepare("SELECT id, username FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
+
 
 if ($user = $result->fetch_assoc()) {
     $_SESSION['user_id'] = $user['id'];
@@ -20,4 +22,6 @@ if ($user = $result->fetch_assoc()) {
 }
 
 $stmt->close();
+} else { 
+    header('Location: ?page=landing');}
 ?>

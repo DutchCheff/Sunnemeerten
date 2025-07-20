@@ -22,6 +22,9 @@ $result = $conn->query("SELECT id, title, content, is_allowed, created_at, image
 <div class="bg-card mx-7 mt-28 rounded-2xl text-text px-3 py-4">
     <a href="?page=feed" class="bg-accent2">feed</a>
 </div>
+<div class="bg-card mx-7 mt-5 rounded-2xl text-text px-3 py-4">
+    <a href="?page=map-test" class="bg-accent2">Map test</a>
+</div>
 <?php if (!$hasfaild): ?>
     <?php if ($result->num_rows > 0): ?>
         <?php while ($row = $result->fetch_assoc()): ?>

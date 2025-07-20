@@ -6,7 +6,7 @@
 <div class="flex flex-col gap-8 items-center mt-8 mx-7">
     <div>
         <button class="bg-card shadow-md px-8 py-1 leading-[1.3] text-4xl text-text rounded-lg">
-            <a href="?page=route">Route</a>
+            <a href="?page=map-test">Route</a>
         </button>
     </div>
     <div class="bg-card shadow-md rounded-lg p-1 w-full">

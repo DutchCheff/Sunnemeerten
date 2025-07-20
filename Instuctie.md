@@ -23,39 +23,39 @@
 
 - Open een geïntegreerde terminal en navigeer naar de map `public/`:
 
-  ```bash
-  cd public
-  php -S localhost:8000
-  ```
+    ```bash
+    cd public
+    php -S localhost:8000
+    ```
 ## 3. Pagina bekijken in de browser
 
 - Open de volgende URL in je browser:
-```
-http://localhost:8000/public?page=<page-name>
-```
-of
-```
-http://localhost:8000/?page=<page-name>
-```
-Vervang `<page-name>` door de naam van de pagina die je hebt aangemaakt (zonder .view.php).
+    ```
+    http://localhost:8000/public?page=<page-name>
+    ```
+    of
+    ```
+    http://localhost:8000/?page=<page-name>
+    ```
+    Vervang `<page-name>` door de naam van de pagina die je hebt aangemaakt (zonder .view.php).
 
-Voorbeeld:
-```
-http://localhost:8000/public?page=login
-```
-Let op: dit is geen live server. Je moet de pagina handmatig verversen (refresh) om veranderingen te zien.
+    Voorbeeld:
+    ```
+    http://localhost:8000/public?page=login
+    ```
+    Let op: dit is geen live server. Je moet de pagina handmatig verversen (refresh) om veranderingen te zien.
 
 ## 4. Tailwind CSS gebruiken
 
 1. Open een nieuwe terminal in de hoofdmap van het project (niet in /public).
 2. Start de Tailwind compiler met het volgende commando:
-```bash
-npm run watch
-```
+    ```bash
+    npm run watch
+    ```
 3. Als dit niet werkt, installeer eerst de projectafhankelijkheden:
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 ## Oude tekst 
 

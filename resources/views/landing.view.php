@@ -34,7 +34,7 @@ foreach ($photoPosts as $post) {
         <div class="bg-card shadow-md rounded-lg p-1 w-full">
             <div class="p-2 relative">
                 <!-- isolate houdt de lagen van Leaflet onder de vaste navigatiebalk -->
-                <div id="kaart" data-static class="h-56 rounded-lg isolate"></div>
+                <div id="kaart" data-static <?php require VIEW_PATH . '/partials/map-data.view.php'; ?> class="h-56 rounded-lg isolate"></div>
                 <a href="?page=route" class="absolute inset-2 z-10" aria-label="Bekijk de route"></a>
             </div>
         </div>
@@ -65,6 +65,7 @@ foreach ($photoPosts as $post) {
 
     <div class="flex flex-col gap-3 items-center mt-16 mx-7">
         <a href="?page=news" class="bg-accent1 w-full text-center text-text text-4xl rounded-lg py-1 leading-[1.3]">Nieuws</a>
+        <a href="?page=workshops" class="bg-card w-full text-center text-text text-4xl rounded-lg py-1 leading-[1.3]">Werkplaatsen</a>
         <a href="?page=volunteer" class="bg-accent2 w-full text-center text-text text-4xl rounded-lg py-1 leading-[1.3]">Vrijwilliger</a>
         <a href="?page=donation" class="bg-card w-full text-center text-text text-4xl rounded-lg py-1 leading-[1.3]">Doneer</a>
     </div>

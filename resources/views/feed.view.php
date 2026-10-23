@@ -9,6 +9,10 @@ if (isPost()) {
         flash('error', 'Log in om te liken of te reageren.');
         redirect('?page=login');
     }
+    if (!isVerified()) {
+        flash('error', 'Bevestig eerst je e-mailadres om te liken of te reageren.');
+        redirect($feedUrl);
+    }
 
     $userId = currentUser()['id'];
     $postId = (int) ($_POST['post_id'] ?? 0);
@@ -126,7 +130,9 @@ unset($_SESSION['open_comments']);
                         <p class="josefin-sans text-sm">Nog geen reacties.</p>
                     <?php endif; ?>
 
-                    <?php if (isLoggedIn()): ?>
+                    <?php if (isLoggedIn() && !isVerified()): ?>
+                        <p class="josefin-sans text-sm">Bevestig je e-mailadres om te reageren.</p>
+                    <?php elseif (isLoggedIn()): ?>
                         <form method="POST" action="<?= $feedUrl ?>" class="flex gap-2 mt-1">
                             <?= csrfField() ?>
                             <input type="hidden" name="action" value="comment">

@@ -21,6 +21,10 @@ if (isPost() && !$alreadySignedUp) {
     if ($motivation === '' || mb_strlen($motivation) > 1000) {
         $errors[] = 'Vertel in maximaal 1000 tekens waarom je wilt helpen.';
     }
+    // Voorkomt dat iemand via dit formulier veel mails naar anderen laat sturen
+    if (time() - ($_SESSION['volunteer_sent_at'] ?? 0) < 600) {
+        $errors[] = 'Je hebt je net al aangemeld. Probeer het over een paar minuten opnieuw.';
+    }
 
     if (!$errors) {
         dbInsert(
@@ -28,7 +32,12 @@ if (isPost() && !$alreadySignedUp) {
             [$user['id'] ?? null, $name, $email, $motivation, now()]
         );
 
-        flash('success', 'Bedankt voor je aanmelding!');
+        $_SESSION['volunteer_sent_at'] = time();
+        sendMail($email,'Bedankt voor je aanmelding als vrijwilliger', 'volunteer', [
+            'name' => $name,
+            'motivation' => $motivation,
+        ]);
+        flash('success', 'Bedankt voor je aanmelding! Je krijgt een bevestiging per mail.');
         redirect('?page=volunteer');
     }
 }

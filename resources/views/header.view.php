@@ -5,6 +5,7 @@ $navLinks = [
     'feed' => "Foto's",
     'route' => 'Route',
     'news' => 'Nieuws',
+    'workshops' => 'Werkplaatsen',
     'donation' => 'Doneren',
     'volunteer' => 'Vrijwilligers',
 ];
@@ -88,6 +89,16 @@ $excludedPages = ['login', 'register', 'landing_ua'];
         <?php endif; ?>
     </div>
 </div>
+<?php endif; ?>
+
+<?php if (isLoggedIn() && !isVerified() && !in_array($page, $excludedPages)): ?>
+    <div class="bg-accent-light text-background mx-7 mt-20 -mb-14 rounded-2xl px-4 py-3 shadow-md max-w-2xl md:mx-auto">
+        <p>Bevestig je e-mailadres via de link die we naar <?= e(currentUser()['email']) ?> hebben gestuurd.</p>
+        <form method="POST" action="?page=verify">
+            <?= csrfField() ?>
+            <button type="submit" class="underline">Stuur de mail opnieuw</button>
+        </form>
+    </div>
 <?php endif; ?>
 
 <?php require VIEW_PATH . '/partials/flash.view.php'; ?>

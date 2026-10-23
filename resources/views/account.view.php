@@ -13,8 +13,16 @@ if (isPost()) {
         $formErrors['account'] = validateAccount($username, $email, $userId);
 
         if (!$formErrors['account']) {
-            dbRun('UPDATE users SET username = ?, email = ? WHERE id = ?', [$username, $email, $userId]);
-            flash('success', 'Je gegevens zijn opgeslagen.');
+            dbRun('UPDATE users SET username = ? WHERE id = ?', [$username, $userId]);
+
+            // Een nieuw e-mailadres moet opnieuw bevestigd worden
+            if (strcasecmp($email, $user['email']) !== 0) {
+                dbRun('UPDATE users SET email = ?, email_verified_at = NULL WHERE id = ?', [$email, $userId]);
+                sendVerificationMail($userId);
+                flash('success', "Je gegevens zijn opgeslagen. Bevestig je nieuwe e-mailadres via de mail die we naar $email hebben gestuurd.");
+            } else {
+                flash('success', 'Je gegevens zijn opgeslagen.');
+            }
             redirect('?page=account');
         }
     }

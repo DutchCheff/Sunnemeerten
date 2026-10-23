@@ -2,6 +2,9 @@
 $adminTabs = [
     'admin' => "Foto's",
     'admin_news' => 'Nieuws',
+    'admin_workshops' => 'Werkplaatsen',
+    'admin_route' => 'Route',
+    'tracker' => 'Live GPS',
     'admin_users' => 'Gebruikers',
     'admin_volunteers' => 'Vrijwilligers',
 ];

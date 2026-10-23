@@ -6,6 +6,7 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     is_admin INTEGER NOT NULL DEFAULT 0,
+    email_verified_at DATETIME NULL,
     created_at DATETIME NOT NULL
 );
 
@@ -60,6 +61,48 @@ CREATE TABLE volunteers (
     created_at DATETIME NOT NULL
 );
 
+CREATE TABLE email_tokens (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    token_hash VARCHAR(64) NOT NULL UNIQUE,
+    type VARCHAR(20) NOT NULL,
+    expires_at DATETIME NOT NULL,
+    created_at DATETIME NOT NULL
+);
+
+CREATE TABLE workshops (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    starts_at DATETIME NOT NULL,
+    ends_at DATETIME NOT NULL,
+    capacity INTEGER NOT NULL,
+    created_at DATETIME NOT NULL
+);
+
+CREATE TABLE workshop_signups (
+    workshop_id INTEGER NOT NULL REFERENCES workshops(id) ON DELETE CASCADE,
+    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at DATETIME NOT NULL,
+    PRIMARY KEY (workshop_id, user_id)
+);
+
+CREATE TABLE parade_locations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    latitude DECIMAL(10, 7) NOT NULL,
+    longitude DECIMAL(10, 7) NOT NULL,
+    accuracy INTEGER NULL,
+    created_at DATETIME NOT NULL
+);
+
+CREATE TABLE settings (
+    name VARCHAR(50) PRIMARY KEY,
+    value TEXT NOT NULL
+);
+
 CREATE INDEX posts_status ON posts(status, created_at);
+CREATE INDEX parade_locations_created ON parade_locations(created_at);
 CREATE INDEX comments_post ON comments(post_id);
 CREATE INDEX post_images_post ON post_images(post_id);

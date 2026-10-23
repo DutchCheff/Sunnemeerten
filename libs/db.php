@@ -51,6 +51,21 @@ function dbInsert(string $sql, array $params = []): int
     return (int) db()->lastInsertId();
 }
 
+function getSetting(string $name, mixed $default = null): mixed
+{
+    $row = dbOne('SELECT value FROM settings WHERE name = ?', [$name]);
+    return $row ? json_decode($row['value'], true) : $default;
+}
+
+function setSetting(string $name, mixed $value): void
+{
+    if (dbOne('SELECT name FROM settings WHERE name = ?', [$name])) {
+        dbRun('UPDATE settings SET value = ? WHERE name = ?', [json_encode($value), $name]);
+    } else {
+        dbRun('INSERT INTO settings (name, value) VALUES (?, ?)', [$name, json_encode($value)]);
+    }
+}
+
 function now(): string
 {
     return date('Y-m-d H:i:s');

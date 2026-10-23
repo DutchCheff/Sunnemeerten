@@ -25,7 +25,8 @@ if (isPost()) {
         );
 
         loginUser($userId);
-        flash('success', 'Welkom bij Sunnemeerten, ' . $username . '!');
+        sendVerificationMail($userId);
+        flash('success', 'Welkom bij Sunnemeerten, ' . $username . '! We hebben je een mail gestuurd om je e-mailadres te bevestigen.');
         redirect('?page=landing');
     }
 }

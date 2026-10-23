@@ -1,0 +1,22 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sunnemeerten",
+      "runtimeExecutable": "php",
+      "runtimeArgs": [
+        "scripts/dev.php"
+      ],
+      "port": 6969
+    },
+    {
+      "name": "sunnemeerten-lan",
+      "runtimeExecutable": "php",
+      "runtimeArgs": [
+        "scripts/dev.php",
+        "--lan"
+      ],
+      "port": 6969
+    }
+  ]
+}

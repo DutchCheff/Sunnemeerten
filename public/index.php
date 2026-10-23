@@ -1,7 +1,5 @@
 <?php
 
-include_once "../libs/core.php";
+require_once __DIR__ . '/../libs/core.php';
 
-?>
-
-    <?php include_once getPage() ?>
+require getPage();

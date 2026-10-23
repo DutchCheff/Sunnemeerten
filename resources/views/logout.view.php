@@ -1,7 +1,8 @@
 <?php
-session_start();
-session_unset(); // remove all session variables
-session_destroy(); // end session
+if (isPost()) {
+    verifyCsrf();
+    logoutUser();
+    flash('success', 'Je bent afgemeld.');
+}
 
-header('Location: ?page=login');
-exit;
+redirect('?page=login');

@@ -1,10 +1,29 @@
+<?php
+$page = currentPage();
+$navLinks = [
+    'landing' => 'Home',
+    'feed' => "Foto's",
+    'route' => 'Route',
+    'news' => 'Nieuws',
+    'workshops' => 'Werkplaatsen',
+    'donation' => 'Doneren',
+    'volunteer' => 'Vrijwilligers',
+];
+if (isLoggedIn()) {
+    $navLinks['account'] = 'Account';
+}
+if (isAdmin()) {
+    $navLinks['admin'] = 'Beheer';
+}
+$excludedPages = ['login', 'register', 'landing_ua'];
+?>
 <!DOCTYPE html>
 <html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/43032dec1c.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,23 +38,16 @@
     <title>Sunnemeerten</title>
 </head>
 
-<body class="josefin-sans-bold bg-<?php
-            if (isset($_GET['page'])) {
-                if ($_GET['page'] == "donation") { echo 'card' ; } else { echo 'background' ; } } ?>">
-</body>
+<body class="josefin-sans-bold min-h-screen bg-<?= $page === 'donation' ? 'card' : 'background' ?>">
 
-<?php
-    // Exclude navbar for specific pages
-    $excludedPages = ['login', 'register', 'landing_ua'];
-    if (!isset($_GET['page']) || !in_array($_GET['page'], $excludedPages)) :
-?>
+<?php if (!in_array($page, $excludedPages)) : ?>
 <nav class="fixed top-0 left-0 w-full flex justify-between items-center px-4 py-3 z-40 bg-inherit text-accent-light">
     <!-- naam -->
-    <div class="w-32">
-        <img src="/images/logo3-light.png" alt="" class="">
-    </div>
+    <a href="?page=landing" class="w-32">
+        <img src="/images/logo3-light.png" alt="Sunnemeerten" class="">
+    </a>
     <!-- Burger -->
-    <button class="w-14" id="burger">
+    <button class="w-14" id="burger" aria-label="Menu openen">
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
             </path>
@@ -43,10 +55,10 @@
     </button>
 </nav>
 <!-- slide out modal -->
-<div class="fixed top-0 right-0 h-full w-1/2 bg-card text-accent-light transform translate-x-full transition-transform duration-700 ease-in-out z-50"
+<div class="fixed top-0 right-0 h-full w-1/2 max-w-xs overflow-y-auto bg-card text-accent-light transform translate-x-full transition-transform duration-700 ease-in-out z-50"
     id="menu">
     <!-- closing button -->
-    <button id="close-menu" class="absolute top-0 right-0 px-4 py-3">
+    <button id="close-menu" class="absolute top-0 right-0 px-4 py-3" aria-label="Menu sluiten">
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
             </path>
@@ -55,28 +67,38 @@
     <div class="">
         <img src="/images/logo.png" alt="" class="mt-10">
     </div>
-    <div class="flex flex-col gap-3 mt-3 px-2">
-        <a href="?page=landing" aria-current="page" class="text-3xl text-accent2">
-            <p class="text-shadow">Home</p>
-        </a>
-        <a href="?page=feed" class="text-3xl">
-            <p class="text-shadow">Foto's</p>
-        </a>
-        <a href="" class="text-3xl">
-            <p class="text-shadow">Route</p>
-        </a>
-        <a href="?page=account" class="text-3xl">
-            <p class="text-shadow">Account</p>
-        </a>
-        <a href="?page=donation" class="text-3xl">
-            <p class="text-shadow">Doneren</p>
-        </a>
-        <a href="?page=volunteer" class="text-3xl">
-            <p class="text-shadow">Vrijwilligers
-            </p>
-        </a>
+    <div class="flex flex-col gap-3 mt-3 px-2 pb-6">
+        <?php foreach ($navLinks as $link => $label): ?>
+            <a href="?page=<?= $link ?>" class="text-3xl <?= $page === $link || str_starts_with($page, $link . '_') ? 'text-accent2' : '' ?>"
+                <?= $page === $link ? 'aria-current="page"' : '' ?>>
+                <p class="text-shadow"><?= $label ?></p>
+            </a>
+        <?php endforeach; ?>
+
+        <?php if (isLoggedIn()): ?>
+            <form method="POST" action="?page=logout">
+                <?= csrfField() ?>
+                <button type="submit" class="text-3xl text-left">
+                    <p class="text-shadow">Afmelden</p>
+                </button>
+            </form>
+        <?php else: ?>
+            <a href="?page=login" class="text-3xl">
+                <p class="text-shadow">Inloggen</p>
+            </a>
+        <?php endif; ?>
     </div>
 </div>
 <?php endif; ?>
 
-</html>
+<?php if (isLoggedIn() && !isVerified() && !in_array($page, $excludedPages)): ?>
+    <div class="bg-accent-light text-background mx-7 mt-20 -mb-14 rounded-2xl px-4 py-3 shadow-md max-w-2xl md:mx-auto">
+        <p>Bevestig je e-mailadres via de link die we naar <?= e(currentUser()['email']) ?> hebben gestuurd.</p>
+        <form method="POST" action="?page=verify">
+            <?= csrfField() ?>
+            <button type="submit" class="underline">Stuur de mail opnieuw</button>
+        </form>
+    </div>
+<?php endif; ?>
+
+<?php require VIEW_PATH . '/partials/flash.view.php'; ?>

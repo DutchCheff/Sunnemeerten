@@ -1,74 +1,55 @@
-<?php require_once '../public/database/db.php'; ?>
-<?php require_once '../resources/views/header.view.php'; ?>
-
 <?php
-session_start();
+if (isLoggedIn()) {
+    redirect('?page=landing');
+}
+
 $errors = [];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = trim($_POST['email']);
-    $password = $_POST['password'];
+if (isPost()) {
+    verifyCsrf();
 
-    // Validate inputs
-    if (empty($email) || empty($password)) {
-        $errors[] = "Vul alle velden in.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Voer een geldig e-mailadres in.";
-    }
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-    if (empty($errors)) {
-        $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    if ($email === '' || $password === '') {
+        $errors[] = 'Vul alle velden in.';
+    } else {
+        $user = dbOne('SELECT id, username, password FROM users WHERE email = ?', [$email]);
 
-        if ($user = $result->fetch_assoc()) {
-            if (password_verify($password, $user['password'])) {
-                // Login success
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-
-                header('Location: ?page=landing'); // Adjust this to your actual route
-                exit;
-            } else {
-                $errors[] = "Ongeldig wachtwoord.";
-            }
-        } else {
-            $errors[] = "Gebruiker niet gevonden.";
+        if ($user && password_verify($password, $user['password'])) {
+            loginUser($user['id']);
+            flash('success', 'Welkom terug, ' . $user['username'] . '!');
+            redirect('?page=landing');
         }
-        $stmt->close();
+
+        $errors[] = 'E-mailadres of wachtwoord klopt niet.';
     }
 }
 ?>
+<?php require VIEW_PATH . '/header.view.php'; ?>
 
 <div class="bg-inherit">
     <div class="mt-16 mb-10">
-        <img src="/images/logo1.png" alt="Logo" class="scale-90">
+        <img src="/images/logo1.png" alt="Logo" class="scale-90 mx-auto max-w-md w-full">
     </div>
-    <div class="bg-card shadow-md mx-7 mb-4 rounded-2xl text-text px-6 py-4">
+    <div class="bg-card shadow-md mx-7 mb-4 rounded-2xl text-text px-6 py-4 max-w-md md:mx-auto">
         <div>
             <h1 class="text-4xl text-center my-4">Login</h1>
         </div>
 
-        <?php if (!empty($errors)): ?>
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-4 rounded">
-                <?php foreach ($errors as $error): ?>
-                    <p><?= htmlspecialchars($error) ?></p>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
+        <?php require VIEW_PATH . '/partials/errors.view.php'; ?>
 
-        <form method="POST" action="">
+        <form method="POST" action="?page=login">
+            <?= csrfField() ?>
             <div class="mb-4 mt-3">
-                <label>Email</label>
-                <input type="email" name="email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required autocomplete="email" value="<?= old('email') ?>"
                        class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-input">
-
             </div>
 
             <div class="mb-4">
-                <label class="block">Wachtwoord</label>
-                <input type="password" name="password" required
+                <label class="block" for="password">Wachtwoord</label>
+                <input type="password" name="password" id="password" required autocomplete="current-password"
                        class="w-full mt-1 p-1 border-black rounded-lg bg-input text-text focus:ring-2 focus:ring-input">
             </div>
 
@@ -81,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="flex gap-2 w-full">
                 <div class="w-1/2">
-                <a href="?page=Guest" class="bg-accent2 text-text px-4 py-1 rounded-lg w-full mb-4 mt-2 text-base text-center block">
+                    <a href="?page=landing_ua&guest=1" class="bg-accent2 text-text px-4 py-1 rounded-lg w-full mb-4 mt-2 text-base text-center block">
                         Gast
                     </a>
                 </div>
@@ -95,4 +76,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </div>
 
-<?php require_once '../resources/views/footer.view.php'; ?>
+<?php require VIEW_PATH . '/footer.view.php'; ?>

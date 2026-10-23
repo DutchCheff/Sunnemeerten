@@ -4,3 +4,8 @@
 config.php
 .DS_Store
 /public/css/style.css
+/storage/*
+!/storage/.gitkeep
+/public/uploads/*
+!/public/uploads/.gitkeep
+!/public/uploads/.htaccess

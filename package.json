@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "dev": "npm run build && php scripts/dev.php",
+    "seed": "php scripts/dev.php --seed",
     "watch": "npx tailwindcss -i ./resources/css/style.css -o ./public/css/style.css --watch",
     "build": "npx tailwindcss -i ./resources/css/style.css -o ./public/css/style.css --minify"
   },

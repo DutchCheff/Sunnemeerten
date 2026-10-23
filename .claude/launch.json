@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sunnemeerten",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["scripts/dev.php"],
+      "port": 6969
+    }
+  ]
+}

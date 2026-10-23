@@ -16,3 +16,63 @@ We werken volgens de **Scrum-methode**, wat betekent dat we:
 
 ### Team
 Ons team bestaat uit een groepje gedreven studenten van Noorderpoort die samen werken aan dit innovatieve project. Samen zorgen we ervoor dat de Sunnemeerten app ontwikkeld wordt.
+
+---
+
+## Lokaal draaien
+
+Nodig: PHP 8.1+ (bijvoorbeeld via XAMPP) en Node.js.
+
+```bash
+npm install
+npm run dev
+```
+
+Open daarna http://localhost:6969. De eerste keer wordt er automatisch een lokale SQLite database (`storage/database.sqlite`) aangemaakt met nepdata en foto's. Je hoeft dus geen MySQL te installeren.
+
+- `npm run dev` – bouwt de CSS en start de server op poort 6969
+- `npm run watch` – bouwt de CSS opnieuw zodra je een bestand opslaat (in een tweede terminal)
+- `npm run seed` – zet de lokale database terug naar de nepdata
+
+### Testaccounts (alleen lokaal)
+
+| Rol | E-mail | Wachtwoord |
+| --- | --- | --- |
+| Beheerder | admin@sunnemeerten.test | admin1234 |
+| Gebruiker | anna@sunnemeerten.test | wachtwoord |
+
+Andere testgebruikers staan in `database/seed.php`.
+
+## Hoe de code in elkaar zit
+
+```
+public/            alles wat de browser mag zien (webroot)
+  index.php        elke pagina loopt via dit bestand: ?page=naam
+  uploads/         geüploade foto's (niet in git)
+libs/
+  core.php         instellingen, sessie, routing (PAGES) en helpers zoals e(), redirect(), csrfField()
+  db.php           databaseverbinding (PDO) en dbAll(), dbOne(), dbRun(), dbInsert()
+  auth.php         inloggen, rollen en validatie van accounts
+  posts.php        posts, foto's en reacties ophalen
+  upload.php       foto's controleren, verkleinen en opslaan
+resources/views/   de pagina's: naam.view.php
+database/          tabellen voor MySQL (live) en SQLite (lokaal) + nepdata
+scripts/dev.php    start de lokale server
+```
+
+Een nieuwe pagina maken:
+1. Maak `resources/views/naam.view.php` (kijk naar `login.view.php` als voorbeeld).
+2. Zet de naam in `PAGES` in `libs/core.php` met wie hem mag zien: `guest`, `user` of `admin`.
+3. Zet bovenaan de PHP-logica (formulier verwerken), daarna `header.view.php`, de HTML en `footer.view.php`.
+4. Elk formulier krijgt `<?= csrfField() ?>` en elke POST begint met `verifyCsrf()`. Zet alles wat je toont door `e()`.
+
+## Live zetten
+
+1. **Hosting**: een pakket met PHP 8.1+ en MySQL (bijvoorbeeld Antagonist, Vimexx of Hostinger) en een domeinnaam. Zet HTTPS (Let's Encrypt) aan.
+2. **Webroot**: laat het domein naar de map `public/` wijzen, niet naar de hoofdmap. Zo kan niemand `libs/`, `config.php` of `database/` openen.
+3. **Bestanden**: zet de code op de server met `git clone`/`git pull` of via FTP. Draai lokaal `npm run build` en upload ook `public/css/style.css`.
+4. **Database**: maak een MySQL database aan en importeer `database/mysql.sql` (via phpMyAdmin).
+5. **Instellingen**: kopieer `config.example.php` naar `config.php` op de server en vul in: `'debug' => false`, `'driver' => 'mysql'` en de databasegegevens van je host.
+6. **Uploads**: zorg dat de map `public/uploads/` schrijfbaar is. Zet in de PHP-instellingen van je host `upload_max_filesize` op 20M en `post_max_size` op 120M.
+7. **Eerste beheerder**: registreer een account via de app en zet in phpMyAdmin bij dat account `is_admin` op `1`. Daarna kun je andere beheerders aanwijzen via Beheer → Gebruikers.
+8. **Testen**: doorloop registreren, inloggen, foto plaatsen, goedkeuren en een nieuwsbericht plaatsen op je telefoon.

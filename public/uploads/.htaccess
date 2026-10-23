@@ -1,0 +1,6 @@
+# Voer nooit scripts uit vanuit de uploadmap
+<FilesMatch "\.(php|phtml|phar|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>
+php_flag engine off
+Options -ExecCGI -Indexes

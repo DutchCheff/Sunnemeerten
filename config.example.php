@@ -28,7 +28,7 @@ return [
     'donation_url' => '',
 
     // Het adres van de site, nodig voor links in e-mails
-    'app_url' => 'http://localhost:6969',
+    'app_url' => getenv('APP_URL') ?: 'http://localhost:6969',
 
     'mail' => [
         // 'log' slaat mails op in storage/mails (te bekijken op ?page=mailbox), 'smtp' verstuurt ze echt
